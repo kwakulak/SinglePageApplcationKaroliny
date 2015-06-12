@@ -9,49 +9,37 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AddDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PictureURL)
-        </th>
-        <th></th>
-    </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
+    <div >
+        <p>
+            Added: 
+            @Html.DisplayFor(modelItem => item.AddDate,"{0:dd/MM/yyyy}")
+        </p>
+        <div>
+            <img src= "@Url.Content(item.PictureURL)" alt="Image" height="200" />
+        </div>
+        <h6>
+            Category:
             @Html.DisplayFor(modelItem => item.Category)
-        </td>
-        <td>
+        </h6>
+        <h2>
             @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
+        </h2>
+
+@*       <ul>*@
+@*            @foreach (var str in item.IngredientsList)*@
+@*            {*@
+@*                <li>@Html.DisplayFor(modelItem => item.Title)</li>*@
+@*            }*@
+@*         </ul>*@
+
+        <p>
             @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AddDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PictureURL)
-        </td>
-        <td>
+        </p>
+
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+    </div>
 }
-
-</table>
