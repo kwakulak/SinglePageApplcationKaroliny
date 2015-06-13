@@ -4,42 +4,43 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
-@foreach (var item in Model) {
-    <div >
-        <p>
-            Added: 
-            @Html.DisplayFor(modelItem => item.AddDate,"{0:dd/MM/yyyy}")
-        </p>
-        <div>
-            <img src= "@Url.Content(item.PictureURL)" alt="Image" height="200" />
-        </div>
-        <h6>
-            Category:
-            @Html.DisplayFor(modelItem => item.Category)
-        </h6>
-        <h2>
-            @Html.DisplayFor(modelItem => item.Title)
-        </h2>
-
-@*       <ul>*@
-@*            @foreach (var str in item.IngredientsList)*@
-@*            {*@
-@*                <li>@Html.DisplayFor(modelItem => item.Title)</li>*@
-@*            }*@
-@*         </ul>*@
-
-        <p>
-            @Html.DisplayFor(modelItem => item.Description)
-        </p>
-
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+<div class="container">
+    <div class="row">
+        <h1 class="col-md-6 col-md-offset-4" style="font-size: 500%; font-family: Gabriola">Przepisy Karoliny</h1>
     </div>
-}
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-6 col-md-offset-4">
+                <p>
+                    Added:
+                    @Html.DisplayFor(modelItem => item.AddDate, "{0:dd/MM/yyyy}")
+                </p>
+                <div>
+                    <img src="@Url.Content(item.PictureURL)" alt="Image" height="200" />
+                </div>
+                <h6>
+                    Category:
+                    @Html.DisplayFor(modelItem => item.Category)
+                </h6>
+                <h2>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </h2>
+
+
+                <p>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </p>
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </div>
+        </div>
+    }
+</div>
