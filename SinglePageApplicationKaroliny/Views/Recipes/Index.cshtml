@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<SinglePageApplicationKaroliny.Models.Recipe>
-
+@using MyResources = SinglePageApplicationKaroliny.Resources.Strings;
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +7,7 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="col-md-6 col-md-offset-4" style="font-size: 500%; font-family: Gabriola">Przepisy Karoliny</h1>
+        <h1 class="col-md-6 col-md-offset-4" style="font-size: 500%; font-family: Gabriola">@MyResources.Title</h1>
     </div>
 
     @foreach (var item in Model)
