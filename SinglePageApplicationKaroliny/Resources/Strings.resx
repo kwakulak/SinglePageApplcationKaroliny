@@ -117,8 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddDate" xml:space="preserve">
+    <value>Add Date</value>
+  </data>
+  <data name="Added" xml:space="preserve">
+    <value>Added</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ConfirmEdition" xml:space="preserve">
+    <value>Confirm edition</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Add Recipe</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Dinner" xml:space="preserve">
+    <value>Dinner</value>
+  </data>
+  <data name="Drink" xml:space="preserve">
+    <value>Drink</value>
+  </data>
+  <data name="EditRecipe" xml:space="preserve">
+    <value>Edit Recipe</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Edit Recipe</value>
+  </data>
+  <data name="NameRequired" xml:space="preserve">
+    <value>Recipe Name Required</value>
+  </data>
+  <data name="PictureURL" xml:space="preserve">
+    <value>Picture URL</value>
+  </data>
+  <data name="Snack" xml:space="preserve">
+    <value>Snack</value>
+  </data>
+  <data name="Sweet" xml:space="preserve">
+    <value>Sweet</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Karolina's Recipes</value>
     <comment>Page title</comment>
+  </data>
+  <data name="Title_Edit" xml:space="preserve">
+    <value>Title</value>
   </data>
 </root>

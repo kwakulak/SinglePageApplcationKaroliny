@@ -1,0 +1,8 @@
+﻿@model IEnumerable<SinglePageApplicationKaroliny.Models.Recipe>
+
+    @foreach (var item in Model.Reverse())
+    {
+        @Html.Partial("SmallIndex", item)
+    }
+
+

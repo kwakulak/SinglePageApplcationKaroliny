@@ -13,47 +13,23 @@
 
 <div class="container">
     <div class="row">
-        <h1 class="col-md-6 col-md-offset-4" style="font-size: 500%; font-family: Gabriola">@MyResources.Title</h1>
-    </div>
+        
 
-    <p>
-        @using(Ajax.BeginForm("GetCreate", option))
-        {
-            @Html.AntiForgeryToken()
-            <button type="submit" >create</button>
-        }
-               @*@Html.ActionLink("Create New", "Create")*@</p>
-    <div id="create">
-    </div>
+        <div class="col-md-6">
+            @using (Ajax.BeginForm("GetCreate", option))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" class="btn btn-info" value=@MyResources.Create />
+            }
 
-    @foreach (var item in Model)
-    {
-        <div class="row">
-            <div class="col-md-6 col-md-offset-4">
-                <p>
-                    Added:
-                    @Html.DisplayFor(modelItem => item.AddDate)
-                </p>
-                <div>
-                    <img src="@Url.Content(item.PictureURL)" alt="Image" width="400" />
-                </div>
-                <h6>
-                    Category:
-                    @Html.DisplayFor(modelItem => item.Category)
-                </h6>
-                <h2>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </h2>
-
-
-                <p>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </p>
-
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            <div id="create">
             </div>
         </div>
-    }
+        <div class="col-md-6" id="recipies">
+            @foreach (var item in Model.Reverse())
+            {
+                @Html.Partial("SmallIndex", item)
+            }
+        </div>
+    </div>
 </div>

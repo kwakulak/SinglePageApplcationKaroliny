@@ -49,14 +49,15 @@ namespace SinglePageApplicationKaroliny.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Category,Title,Description,AddDate,PictureURL")] Recipe recipe)
         {
+            recipe.AddDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Students.Add(recipe);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return PartialView("SmallIndex",recipe);
             }
 
-            return PartialView(recipe);
+            return View("Index",db.Students);
         }
 
         // GET: Recipes/Edit/5
@@ -74,6 +75,20 @@ namespace SinglePageApplicationKaroliny.Controllers
             return View(recipe);
         }
 
+        public ActionResult GetEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Recipe recipe = db.Students.Find(id);
+            if (recipe == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("Edit",recipe);
+        }
+
         // POST: Recipes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -85,9 +100,9 @@ namespace SinglePageApplicationKaroliny.Controllers
             {
                 db.Entry(recipe).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return PartialView("SmallList",db.Students);
             }
-            return View(recipe);
+            return View("Index", db.Students);
         }
 
         // GET: Recipes/Delete/5

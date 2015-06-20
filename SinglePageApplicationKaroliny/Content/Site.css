@@ -15,3 +15,21 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.recipe-item{
+    float: left;
+    background-size: cover;
+    font-weight: bold;
+    text-shadow: 0 0 5px #fff;
+}
+
+.recipe-bg{
+    background: rgba(255,255,255,0.5);
+}
+
+#my-header{
+    font-family: Gabriola;
+    color: #fff;
+    text-align: center;
+    font-size: 3em;
+}
