@@ -37,9 +37,9 @@ namespace SinglePageApplicationKaroliny.Controllers
         }
 
         // GET: Recipes/Create
-        public ActionResult Create()
+        public ActionResult GetCreate()
         {
-            return View();
+            return PartialView("Create");
         }
 
         // POST: Recipes/Create
@@ -56,7 +56,7 @@ namespace SinglePageApplicationKaroliny.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(recipe);
+            return PartialView(recipe);
         }
 
         // GET: Recipes/Edit/5
